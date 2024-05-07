@@ -147,3 +147,124 @@ print(x)
 
 x = not 1 or 0 and 1 or 3 and 4 or 5 and 6 or 7 and 8 and 9
 print(x)
+
+# 条件判断
+if 3 > 5:
+  print('我在里面')
+  print('我也在里面')
+elif 5 < 6:
+  print('yep')
+else :
+  print('我在外面')
+
+# 条件表达式
+age = 16
+print('抱歉，未满18岁禁止访问') if age < 18 else print('欢迎访问')
+
+a = 3
+b = 4
+small = a if a < b else b
+print(small)
+
+score = 66
+level = ('D' if 0 <= score < 60 else
+         'C' if 60 <= score < 80 else
+         'B' if 80 <= score < 90 else
+         'A' if 90 <= score < 100 else
+         'S' if score == 100 else
+         print('请输入分数'))
+print(level)
+
+# 循环
+i = 1
+sum = 0
+while i <= 1000000:
+  sum += i
+  i += 1
+  if i == 10:
+    break
+  if i % 2 == 0:
+    continue
+  print(i)
+print(sum)
+
+day = 1
+hour = 1
+while day <= 7:
+  while hour <= 8:
+    print('第' + str(day) + '天：' + '今天我一定学习8小时')
+    hour += 1
+    if hour > 2:
+      break
+  day += 1
+  hour = 1
+
+# for 循环
+for each in 'I learned python':
+  print(each)
+
+for i in range(1, 10):
+  print(i)
+
+# 输出10以内所有素数
+for n in range(2, 10):
+  for x in range(2, n):
+    if n % x == 0:
+      print(n, '=', x, '*', n // x)
+      break
+  else:
+    print(n, '是一个素数')
+
+# 列表
+rhyme = [1, 2, 3, 4, 5, '上山打老虎']
+print(rhyme)
+for each in rhyme:
+  print(each)
+print(rhyme[1])
+print(rhyme[-1])
+
+# 列表切片
+print(rhyme[:])
+print(rhyme[:3])
+print(rhyme[3:])
+print(rhyme[0:6:2])
+print(rhyme[::2])
+print(rhyme[::-2])
+print(rhyme[::-1])
+
+nums = [1,2,3,'x']
+# 单个尾部插入
+nums.append(4)
+# 连续尾部插入
+nums.extend([5,6,7])
+print(nums)
+
+# 切片尾部插入
+nums[len(nums):] = [8,9,10]
+# 指定位置插入
+nums.insert(0,0)
+# 指定元素移除
+nums.remove(10)
+# 指定位置移除
+nums.pop(4)
+# 全部清空
+nums.clear()
+
+print(nums)
+
+# 排序
+nums = [3,45,63,56,3,1,34,5,56,4]
+nums.sort()
+nums.reverse()
+nums.sort(reverse=True)
+print(nums)
+
+# 查找
+nums = [3,45,63,56,3,1,34,5,56,4]
+print(nums.count(56))
+
+print(nums.index(56))
+
+# 浅拷贝
+nums_copy = nums.copy()
+print(nums_copy)
