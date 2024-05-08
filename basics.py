@@ -268,3 +268,137 @@ print(nums.index(56))
 # 浅拷贝
 nums_copy = nums.copy()
 print(nums_copy)
+
+# 列表的加法乘法
+s = [1,2,3]
+t = [4,5,6]
+print(s+t)
+print(s*3)
+
+# 嵌套列表
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
+print(matrix)
+
+for i in matrix:
+  for each in i:
+    print(each, end=' ')
+  print()
+
+x = [1,2,4]
+y = [1,2,4]
+print(x is y)
+
+# 创建多维列表
+A = [1] * 3
+print(A)
+for i in range(3):
+  A[i] = [2] * 2
+print(A)
+
+# 浅拷贝，处理一层列表的引用
+x = [1,2,3]
+y = x.copy()
+x[1] = 'x'
+print(x)
+print(y)
+# 切片浅拷贝
+x = [1,2,3]
+y = x[:]
+x[1] = 'x'
+print(x)
+print(y)
+# copy模块浅拷贝
+import copy
+x = [[1,2,3],[4,5,6],[7,8,9]]
+y = copy.copy(x)
+x[1][1] = 'x'
+print(x)
+print(y)
+
+# 多维列表浅拷贝无效
+x = [[1,2,3],[4,5,6],[7,8,9]]
+y = x.copy()
+x[1][1] = 'x'
+print(x)
+print(y)
+
+# 深拷贝
+import copy
+x = [[1,2,3],[4,5,6],[7,8,9]]
+y = copy.deepcopy(x)
+x[1][1] = 'x'
+print(x)
+print(y)
+
+# 将列表中数字乘以2倍
+A = [1,2,3,4,5,6]
+for i in range(len(A)):
+  A[i] = A[i] * 2
+print(A)
+
+# 列表推导式
+# 语法 [expression for target in iterable]
+A = [1,2,3,4,5,6]
+A = [i * 2 for i in A]
+print(A)
+
+matrix = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
+col2 = [row[1] for row in matrix]
+print(col2)
+diag = [matrix[i][i] for i in range(len(matrix))]  # i = 0,1,2
+# matrix[0][0] matrix[1][1] matrix[2][2]
+print(diag)
+
+# 列表推导式创建多维列表
+S = [[0]*3 for i in range(3)]
+print(S)
+
+# 筛选
+even = [i for i in range(10) if i % 2 == 0]
+print(even)
+odd = [i+1 for i in range(10) if i % 2 == 0]
+print(odd)
+
+words = ['Great', 'Find', 'Fantastic', 'Excellent', 'Nice']
+f_words = [i for i in words if i[0] == 'F']
+print(f_words)
+
+# 二维列表降为一维列表
+matrix = [[1,2,3], [4,5,6], [7,8,9]]
+flatten = [col for row in matrix for col in row]
+print(flatten)
+
+A = [[x,y] for x in range(10) if x % 2 == 0 for y in range(10) if y % 3 == 0]
+print(A)
+
+# 元组
+# 元组不可变
+rhyme = (1,2,3,3,3,3,4,5,'上山打老虎')
+print(rhyme)
+print(rhyme[-1])
+print(rhyme.count(3))
+print(rhyme.index(3))
+print(rhyme[::-1])
+
+s = (1,2,3,4,5)
+a = [each*2 for each in s]
+print(a)
+
+print((520,))
+
+# 打包 / 解包
+t = ('你好', '再见', '咕的白')
+x, y, z = t # 左侧数量和右侧内数量一致
+print(x)
+print(y)
+print(z)
+
+t = ('你好', '再见', '咕的白', '唯美的', '他')
+x, y, *z = t
+print(x)
+print(y)
+print(z)
