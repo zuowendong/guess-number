@@ -402,3 +402,135 @@ x, y, *z = t
 print(x)
 print(y)
 print(z)
+
+# 字符串方法
+x = '12321'
+res = '是回文数' if x == x[::-1] else '不是回文数'
+print(res)
+x = '12345'
+res = '是回文数' if x == x[::-1] else '不是回文数'
+print(res)
+
+# 字符串大小写转换方法
+x = "how are you? I'm fine"
+print(x)
+# 首字母大写
+print(x.capitalize())
+# 首字母小写
+print(x.casefold())
+# 每个单词首字母大写
+print(x.title())
+# 所有字符大小写反转
+print(x.swapcase())
+# 所有字符大写
+print(x.upper())
+# 所有字符小写
+print(x.lower())
+
+# 字符串对齐
+x = '你好吗？我很好哦'
+print(x.center(5))
+print(x.center(20, '-'))
+print(x.ljust(20))
+print(x.rjust(20))
+
+print('520'.zfill(5))
+print('-250'.zfill(5))
+
+# 字符串查找方法
+x = "上海自来水来自海上"
+print(x.count('海',0,5))
+print(x.find('海'))
+print(x.rfind('海'))
+
+code = """
+  print("I love you")
+  print("I love you")
+"""
+new_code = code.expandtabs(4)
+print(new_code)
+
+a = "小乖乖，小一一".replace('小乖乖','小宝宝')
+print(a)
+
+a = 'HOW ARE YOU'.translate(str.maketrans("ABCDEFG", '1234567'))
+print(a)
+
+a = 'HOW ARE YOU'.translate(str.maketrans("ABCDEFG", '1234567', "HOW"))
+print(a)
+
+# 字符串判断
+a = 'I love you'.startswith('i')
+print(a)
+a = 'I love you'.startswith('I')
+print(a)
+a = 'I love you'.endswith('you')
+a = 'I love you'.endswith('u')
+print(a)
+
+x = '我爱这个世界'
+if x.startswith(('你','我','他')):
+  print('总有人爱着这个世界')
+
+x = 'how are you'
+print(x.istitle())
+print(x.isupper())
+print(x.islower())
+print(x.isspace())
+print(x.isalpha()) 
+
+print("howareyou".isalpha())
+print("  \n".isspace())
+
+print(x.isprintable())
+print("how are you\n".isprintable())
+
+# 判断字符为数字
+x = '12345'
+print(x.isdecimal())
+print(x.isdigit())
+print(x.isnumeric())
+
+x = '2²'
+print(x.isdecimal())
+print(x.isdigit())
+print(x.isnumeric())
+
+x = 'Ⅰ Ⅱ Ⅲ'
+print(x.isdecimal())
+print(x.isdigit())
+print(x.isnumeric())
+
+x = '一二三'
+print(x.isdecimal())
+print(x.isdigit())
+print(x.isnumeric())
+
+x = '壹贰叁'
+print(x.isdecimal())
+print(x.isdigit())
+print(x.isnumeric())
+
+# 是否为python保留关键字
+import keyword
+print(keyword.iskeyword('if'))
+print(keyword.iskeyword('while'))
+print(keyword.iskeyword('const'))
+
+# 字符串截取
+x = '        左侧不留空白'.lstrip()
+print(x)
+x = '右侧不留白         '.rstrip()
+print(x)
+x = '          左右不留白         '.strip()
+print(x)
+# 匹配其中出现的字符
+x = 'www.baidu.com'.lstrip('blowback.')
+print(x)
+x = 'www.baidu.com'.removeprefix()
+print(x)
+x = 'www.baidu.com'.removesuffix()
+print(x)
+
+# 拆分&拼接
+x = ''
