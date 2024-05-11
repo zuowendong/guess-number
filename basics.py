@@ -527,9 +527,9 @@ print(x)
 # 匹配其中出现的字符
 x = 'www.baidu.com'.lstrip('blowback.')
 print(x)
-x = 'www.baidu.com'.removeprefix()
+x = 'www.baidu.com'.removeprefix("www")
 print(x)
-x = 'www.baidu.com'.removesuffix()
+x = 'www.baidu.com'.removesuffix("baidu")
 print(x)
 
 # 拆分&拼接
